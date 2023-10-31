@@ -1,0 +1,101 @@
+<h2 class="section_title">{{section_title}}</h2>
+<div id="div1" style="display:flex; justify-content: center">
+
+    <!--<div style="margin: 4px">-->
+    <!--    <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-{{product_ID_1}}"-->
+    <!--        itemscope itemtype="http://schema.org/Product" data-single-product-id="{{product_ID_1}}">-->
+    <!--        <div itemprop="image"></div>-->
+    <!--        <div class="ecsp-title" itemprop="name" content="LaBoheme Mesh Strap Watch"></div>-->
+    <!--        <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">-->
+    <!--            <div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="198.9">-->
+    <!--                <div itemprop="priceCurrency" content="CAD"></div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div customprop="addtobag"></div>-->
+    <!--    </div>-->
+    <!--</div>-->
+
+</div>
+<div style="display: flex; justify-content: end;">
+    <a href="/store#!/~/search" class="see_more_btn button">See More</a>
+</div>
+
+<!--<button onClick="myFunction()" class="see_more_btn button">API CALL</button>-->
+
+<script>
+    function myFunction() {
+        let totalProducts = 0;
+        const nbToDisplay = 4;
+        let htmlOutput = "";
+
+        const currentDiv = document.getElementById("div1");
+
+        let url = 'https://app.ecwid.com/api/v3/{{STORE_ID}}/products';
+        const options = {
+            method: 'GET',
+            headers: { accept: 'application/json', Authorization: 'Bearer {{API_KEY}}' }
+        };
+
+        const queryParams = {
+            sortBy: 'ADDED_TIME_DESC'
+            // Add more as needed
+        };
+
+        const queryString = new URLSearchParams(queryParams).toString();
+
+        url = url + '?' + queryString;
+
+        console.log(url)
+
+        fetch(url, options)
+            .then(res => res.json())
+            .then(json => {
+                console.log(json)
+                totalProducts = json.count
+                let productId = 0;
+                for (let i = 0; i < nbToDisplay; i++) {
+                    console.log(json.items[i])
+                    productId = json.items[i].id
+                    htmlOutput += `
+                         <div class="product-card">
+            <div class="badge">${json.items[i].googleItemCondition}</div>
+            <div class="product-tumb">
+                <img src="${json.items[i].hdThumbnailUrl}" alt="">
+            </div>
+            <div class="product-details">
+                <span class="product-catagory">Women,bag</span>
+                <h4><a href="/store#!/p/${json.items[i].id}">${json.items[i].name}</a></h4>
+                
+                <div class="product-bottom-details">
+                    <div class="product-price">${json.items[i].defaultDisplayedPriceFormatted}</div>
+                    <div class="product-links">
+                        <a href=""><i class="fa fa-heart"></i></a>
+                        <a href=""><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>`
+                }
+
+                return htmlOutput;
+            }).then(htmlOutput => {
+                console.log(htmlOutput.toString())
+                currentDiv.innerHTML = htmlOutput;
+            })
+            .catch(err => console.error('error:' + err));
+    }
+    window.onload = myFunction;
+</script>
+<script data-cfasync="false" type="text/javascript"
+    src="https://app.ecwid.com/script.js?61982800&data_platform=singleproduct_v2" charset="utf-8"></script>
+<script type="text/javascript">xProduct()</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>

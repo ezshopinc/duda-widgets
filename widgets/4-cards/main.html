@@ -1,0 +1,132 @@
+<h2 class="section_title">{{section_title}}</h2>
+<div id="div1" style="display:flex; justify-content: center">
+
+    <div style="margin: 4px">
+        <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-{{product_ID_1}}"
+            itemscope itemtype="http://schema.org/Product" data-single-product-id="{{product_ID_1}}">
+            <div itemprop="image"></div>
+            <div class="ecsp-title" itemprop="name" content="LaBoheme Mesh Strap Watch"></div>
+            <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+                <div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="198.9">
+                    <div itemprop="priceCurrency" content="CAD"></div>
+                </div>
+            </div>
+            <div customprop="addtobag"></div>
+        </div>
+    </div>
+
+    <div style="margin: 4px">
+        <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-{{product_ID_2}}"
+            itemscope itemtype="http://schema.org/Product" data-single-product-id="{{product_ID_2}}">
+            <div itemprop="image"></div>
+            <div class="ecsp-title" itemprop="name" content="LaBoheme Mesh Strap Watch"></div>
+            <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+                <div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="198.9">
+                    <div itemprop="priceCurrency" content="CAD"></div>
+                </div>
+            </div>
+            <div customprop="addtobag"></div>
+        </div>
+
+    </div>
+    <div style="margin: 4px">
+        <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-{{product_ID_3}}"
+            itemscope itemtype="http://schema.org/Product" data-single-product-id="{{product_ID_3}}">
+            <div itemprop="image"></div>
+            <div class="ecsp-title" itemprop="name" content="LaBoheme Mesh Strap Watch"></div>
+            <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+                <div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="198.9">
+                    <div itemprop="priceCurrency" content="CAD"></div>
+                </div>
+            </div>
+            <div customprop="addtobag"></div>
+        </div>
+
+    </div>
+    <div style="margin: 4px">
+        <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-{{product_ID_4}}"
+            itemscope itemtype="http://schema.org/Product" data-single-product-id="{{product_ID_4}}">
+            <div itemprop="image"></div>
+            <div class="ecsp-title" itemprop="name" content="LaBoheme Mesh Strap Watch"></div>
+            <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+                <div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="198.9">
+                    <div itemprop="priceCurrency" content="CAD"></div>
+                </div>
+            </div>
+            <div customprop="addtobag"></div>
+        </div>
+
+    </div>
+
+</div>
+<div style="display: flex; justify-content: end;">
+    <button class="see_more_btn button">See More</button>
+</div>
+
+<button onClick="myFunction()" class="see_more_btn button">API CALL</button>
+
+<script>
+    function myFunction() {
+        let totalProducts = 0;
+        const nbToDisplay = 4;
+        let htmlOutput = "";
+
+        const currentDiv = document.getElementById("div1");
+
+        const url = 'https://app.ecwid.com/api/v3/61982800/products';
+        const options = {
+            method: 'GET',
+            headers: { accept: 'application/json', Authorization: 'Bearer public_K2wM1Cd5YajQ948V33dwtky7EwhirG1J' }
+        };
+
+        fetch(url, options)
+            .then(res => res.json())
+            .then(json => {
+                console.log(json)
+                totalProducts = json.count
+                let productId = 0;
+                for (let i = 0; i < nbToDisplay; i++) {
+                    console.log(json.items[i])
+                    productId = json.items[i].id
+                    htmlOutput += `
+                            <div style="margin: 4px">
+                                <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-${productId}"
+                                    itemscope itemtype="http://schema.org/Product" data-single-product-id="${productId}">
+                                    <div itemprop="image"></div>
+                                    <div class="ecsp-title" itemprop="name" content="LaBoheme Mesh Strap Watch"></div>
+                                    <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+                                        <div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="198.9">
+                                            <div itemprop="priceCurrency" content="CAD"></div>
+                                        </div>
+                                    </div>
+                                    <div customprop="addtobag"></div>
+                                </div>
+                            </div>`
+                }
+
+                console.log(htmlOutput)
+                return htmlOutput;
+            }).then(htmlOutput => {
+                currentDiv.innerHTML = htmlOutput
+            })
+            .catch(err => console.error('error:' + err));
+
+        //     currentDiv.innerHTML = `<div style="margin: 4px">
+        //   FUN
+
+        // </div>`;
+        // const newDiv = document.createElement("div");
+
+        // // and give it some content
+        // const newContent = document.createTextNode("Hi there and greetings!");
+
+        // currentDiv.innerHTML= "<h1>LOLLL</h1>";
+
+        // add the text node to the newly created div
+        //newDiv.appendChild(newContent);
+        // add the newly created element and its content into the DOM
+    }
+</script>
+<script data-cfasync="false" type="text/javascript"
+    src="https://app.ecwid.com/script.js?61982800&data_platform=singleproduct_v2" charset="utf-8"></script>
+<script type="text/javascript">xProduct()</script>
