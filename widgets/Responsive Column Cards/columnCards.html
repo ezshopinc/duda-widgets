@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .category-column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .category-row {
+            margin: 0 -5px;
+        }
+
+        /* Clear floats after the columns */
+        .category-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .category-column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 1200px) {
+            .category-column {
+                width: 50%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .category-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* padding: 16px; */
+            text-align: center;
+            background-color: #f1f1f1;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            align-items: center;
+        }
+
+        .category-card-img {
+            /* Tip: use 1:1 ratio images */
+            height: 100%;
+            /* width: 100%; */
+            flex-shrink: 0;
+            min-width: 100%;
+            min-height: 100%
+                /* or width when img.width > img.height */
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .category-card-title {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Responsive Column Cards</h2>
+    <p>Resize the browser window to see the effect.</p>
+
+    <div class="category-row">
+        <div class="category-column">
+            <div class="category-card">
+                <img class="category-card-img"
+                    src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </div>
+            <div class="category-card-title">
+                <h3>Title</h3>
+            </div>
+        </div>
+
+        <!-- <div class="card-container">
+            <a href="/store#!/~/search/categories=${json.items[i].id}" class="card has-bg-img" style="background-image: url(${json.items[i].originalImageUrl || ''})">
+            </a>
+            <div style="display:flex; justify-content:center; font-weight:300">
+                <div>
+                    <h4>${json.items[i].name}<h4>
+                </div>
+            </div>
+       
+        </div> -->
+
+        <div class="category-column">
+            <div class="category-card">
+                <img class="category-card-img"
+                    src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </div>
+            <div class="category-card-title">
+                <h3>Title</h3>
+            </div>
+        </div>
+
+        <div class="category-column">
+            <div class="category-card">
+                <img class="category-card-img"
+                    src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </div>
+            <div class="category-card-title">
+                <h3>Title</h3>
+            </div>
+        </div>
+
+        <div class="category-column">
+            <div class="category-card">
+                <img class="category-card-img"
+                    src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </div>
+            <div class="category-card-title">
+                <h3>Title</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-var container = document.getElementById('container')
+var container = document.getElementById('slider-frame-container')
 var slider = document.getElementById('slider');
 var slides = document.getElementsByClassName('slide').length;
 var buttons = document.getElementsByClassName('btn');
@@ -28,7 +28,7 @@ function setParams(w) {
         if (w < 901) {
             slidesPerPage = 2;
         } else {
-            if (w < 1101) {
+            if (w < 1200) {
                 slidesPerPage = 3;
             } else {
                 slidesPerPage = 4;

@@ -1,112 +1,12 @@
-#slider-frame-container {
-  margin: 0;
-  padding: 0;
-  /* display: grid ; */
-  place-items: center
-}
-
-#slider-container {
-  /* height: 300px; */
-  /* width: 85vw;
-  max-width: 1400px; */
-  /* background: #54d5e4; */
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-}
-
-#slider-container .btn {
-  position: absolute;
-  top: calc(50% - 30px);
-  height: 30px;
-  width: 30px;
-  border-left: 8px solid pink;
-  border-top: 8px solid pink;
-  z-index: 9999;
-}
-
-#slider-container .btn:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-#slider-container .btn.inactive {
-  border-color: rgb(153, 121, 126);
-  display: none;
-}
-
-#slider-container .btn:first-of-type {
-  transform: rotate(-45deg);
-  left: 10px
-}
-
-#slider-container .btn:last-of-type {
-  transform: rotate(135deg);
-  right: 10px;
-}
-
-#slider-container #slider {
-  display: flex;
-  width: 1000%;
-  height: 100%; 
-  transition: all .5s;
-}
-
-#slider-container #slider .slide {
-  height: 90%;
-  margin: auto 10px;
-  background-color: #a847a4;
-  display: grid;
-  place-items: center;
-}
-
-#slider-container #slider .slide span {
-  color: white;
-  font-size: 150px;
-}
-  
-  @media only screen and (min-width: 1200px) {
-  
-    #slider-container #slider .slide {
-      width: calc(2.5% - 20px);
-    }
-  
-  }
-  
-  @media only screen and (max-width: 1200px) {
-  
-    #slider-container #slider .slide {
-      width: calc(3.3333333% - 20px);
-    }
-  
-  }
-  
-  @media only screen and (max-width: 900px) {
-  
-    #slider-container #slider .slide {
-      width: calc(5% - 20px);
-    }
-  
-  }
-  
-  @media only screen and (max-width: 550px) {
-  
-    #slider-container #slider .slide {
-      width: calc(10% - 20px);
-    }
-  
-  }
-
-
-  /* Product Card */
-  a
+a
 {
     text-decoration: none;
 }
 .product-card {
-    width: 100%;
+    width: 380px;
     position: relative;
     /*box-shadow: 0 2px 7px #dfdfdf;*/
+    margin: 5px;
     /*background: #fafafa;*/
 }
 
@@ -148,7 +48,6 @@
     padding-top:12px;
     text-align: center;
     padding-bottom: 0px;
-    background-color: white;
 }
 
 .product-catagory {
