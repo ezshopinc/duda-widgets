@@ -1,0 +1,13 @@
+.footer-links{
+    background-color: transparent !important;
+  
+  }
+  
+  .footer-links .link {
+        color: white;
+       
+  }
+  
+  .footer-link-element {
+       margin-bottom: 10px;
+  }

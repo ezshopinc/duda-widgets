@@ -1,0 +1,63 @@
+<div class="footer-links">
+    <div   class="" style="display: flex; flex-direction:column; justify-content: center; flex-shrink=0">
+        <ul id="footer-categories" style="list-style-type: none;">
+            
+        </ul>
+    </div>
+    
+</div>
+
+<!--<button onClick="myFunctionX()" class="see_more_btn button">API CALL</button>-->
+
+<script>
+    function fetchFooterCategories() {
+        let totalProducts = 0;
+        const nbToDisplay = 4;
+        let htmlOutput = "";
+
+        const currentDiv = document.getElementById("footer-categories");
+
+        let url = 'https://app.ecwid.com/api/v3/{{STORE_ID}}/categories';
+        const options = {
+            method: 'GET',
+            headers: { accept: 'application/json', Authorization: 'Bearer {{API_KEY}}' }
+        };
+        
+          const queryParams = {
+          parent: '0',
+        };
+        
+        const queryString = new URLSearchParams(queryParams).toString();
+        
+        url = url + '?' + queryString;
+ 
+
+        fetch(url, options)
+            .then(res => res.json())
+            .then(json => {
+                totalCategories = json.count
+                let productId = 0;
+                for (let i = 0; i < totalCategories; i++) {
+                    productId = json.items[i].id
+                    productNameForUrl = json.items[i].name.replace(/ /g, "-");
+                    htmlOutput += ` <li class="footer-link-element"><a class="link" href="/store#!/${productNameForUrl}/c/${json.items[i].id}">${json.items[i].name}</a></li>`
+                }
+            htmlOutput += `
+              <li class="footer-link-element"><a class="link" href="/store#!/~/search">Shop All</a></li>`
+                return htmlOutput;
+            }).then(htmlOutput => {
+                currentDiv.innerHTML = htmlOutput;
+            })
+            .catch(err => console.error('error:' + err));
+    }
+//      window.onload = function(){
+//         // All code comes here
+//         myFunctionX();
+//  }
+ $(document).ready(function() {
+fetchFooterCategories();
+
+});
+
+    
+</script>
