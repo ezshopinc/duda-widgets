@@ -1,0 +1,1 @@
+console.log("Ecwid App JS")
