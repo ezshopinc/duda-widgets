@@ -1,0 +1,297 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+.dmCustomHtml  *{
+font-family: 'Poppins', sans-serif !important;
+//color: red !important;
+}
+html#ecwid_html body#dmRoot .ec-size .ec-store * {
+font-family: 'Poppins', sans-serif !important;
+  font-size: 14px;
+font-weight:400;
+}
+#dm .ecwid *, .dmPhotoGallery p.caption-text{
+//color: yellow;
+}
+
+//form buttons
+.ecwid .form-control__button{
+font-size: 15px !important;
+  font-weight: 400;
+  text-transform: uppercase;
+background-color: black;
+border: 1px solid black;
+}
+
+.ecwid .form-control__button::hover{
+background: transparant !important;
+}
+
+//--------- PRODUCT DETAIL -----------
+
+.product-details__product-description > div > p{
+font-size: 14px !important;
+line-height: 1.5em;
+}
+//checkout btn font
+.ecwid .details-product-purchase__checkout span{
+color: white !important;
+font-size: 1.125rem !important;
+}
+//add to bag font
+span.form-control__button-text {
+font-weight: 500;
+//color: white !important;
+}
+
+.ecwid .product-details-module{
+color: black !important
+}
+
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store h6, html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-header-h6{
+color: black !important
+}
+
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .details-product-price__value{
+color: black
+}
+
+.details-product-purchase__add-to-bag  span{
+color: white !important;
+font-size: 1.125rem !important;
+}
+
+//product description page
+.product-details__product-description *{
+    color: black !important;
+}
+
+//category description title
+.ecwid .grid__description-inner p{
+color: black !important;
+font-weight: 400;
+}
+
+//Search Bar Filters
+html#ecwid_html body#dmRoot .ec-size .ec-store .ec-filters--inline.ec-filters--left.ec-filters--animation-opened .ec-filters__wrap *{
+color: black !important;
+}
+//Search Bar Filters on Category Page
+html#ecwid_html body#dmRoot .ec-size .ec-store .ec-filters--inline.ec-filters--right.ec-filters--opened *{
+color: black !important;
+}
+
+//Product cart image background
+html#ecwid_html body#dmRoot .ec-size .ec-store .grid-product--has-shadow .grid-product__shadow {
+background-color: rgba(0,0,0,0)!important;
+}
+
+//Grid card title
+.grid-product__title-inner{
+color: #15232E !important;
+font-weight: 500;
+font-family: 'Poppins', sans-serif;
+font-size: 16px !important;
+}
+//Grid card price
+.grid-product__price-value.ec-price-item{
+color: rgba(92, 92, 92, 1) !important;
+font-weight: 400 !important;
+margin-top: 5px !important;
+font-family: 'Roboto', sans-serif;
+font-size:16px;
+}
+
+//Search bar
+.ecwid-search-widget__input {
+border-radius: 2rem !important;
+//font-size: 15px !important;
+}
+
+//category header
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-page-title+.ec-grid .grid__categories:first-child{
+display: none;
+}
+
+.grid__categories.grid__categories--advanced.grid__categories--medium-items.grid__categories--aspect-ratio-1{
+display: none !important;
+}
+
+//Sidebar search slider
+html#ecwid_html body#dmRoot .ec-size .ec-store .ec-range__runner{
+    width: 14px !important;
+    height: 14px !important;
+    box-shadow: 0 0 0 0px !important;
+top: -5px !important;
+}
+
+html#ecwid_html body#dmRoot .ec-size .ec-store .ec-range__slider{
+background: black !important;
+}
+html#ecwid_html body#dmRoot .ec-size .ec-store .ec-range__runner{
+background-color: black !important;
+    border: 2px solid black;
+}
+
+//--------CART STYLING -------
+
+.ec-cart-email__text {
+color: black;
+}
+.ec-cart-next__title{
+color: black;
+font-weight: 500;
+}
+
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-cart-next__header{
+color: black;
+}
+
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-cart-item__title {
+color: black;
+}
+
+//-------Account----------
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store.ec-store__account-page .ec-header-h4 {
+color: black;
+}
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store h1, html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-header-h1{
+color:black;
+}
+.ecwid .grid-product__title-inner{
+font-size:13px !important;
+}
+.ecwid .grid-product__price-value{
+font-family: 'Poppins', sans-serif !important;
+color: #868686 !important;
+font-weight:300 !important;
+}
+.ecwid .form-control__button{
+width: 340px !important;
+ font-weight: 300 !important;
+font-family: 'Poppins', sans-serif' !important;
+background-color:black !important;
+}
+
+html#ecwid_html body#dmRoot .ec-size .ec-store .form-control--primary .form-control__button {
+  background-color: transparent;
+  color: black;
+text-transform: uppercase;
+border: 1px solid black;
+}
+
+html#ecwid_html body#dmRoot .ec-size .ec-store .form-control--primary .form-control__button:hover{
+background-color: #f7f7f7;
+}
+html#ecwid_html body#dmRoot .ec-size .ec-store .form-control--animated.form-control--done .form-control__button-text:hover{
+width: 100%;
+  height: 100%;
+}
+html#ecwid_html body#dmRoot .details-product-purchase__add-to-bag span {
+  color: black !important;
+  font-size: 16px !important;
+  font-weight:400;
+}
+
+.product-details__sidebar {
+padding: 20px !important;
+  background: linear-gradient(180deg, #FFF 0%, #FFF 100%) !important;
+  border-radius: 8px;
+  border: 0.5px solid #eaeaea !important;
+}
+
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-header-h3 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+html#ecwid_html body#dmRoot .ec-size .ec-store .form-control__text{
+position: relative;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  outline: none;
+  background-color: #fff0;
+  box-shadow: none;
+  color: #333;
+  transition: border-color .15s ease-out 0s;
+  line-height: 1.4;
+}
+.details-product-purchase__qty {
+  display: flex;
+  flex-direction: column;
+}
+.details-product-purchase__qty-field {
+  margin-top: 7px !important;
+
+}
+html#ecwid_html body#dmRoot .ec-size .ec-store .details-product-purchase__qty-label {
+  margin-right: 4px;
+  font-weight: 400;
+  color: black;
+}
+.details-product-purchase__place span {
+  border-radius: 50px;
+  color: #4f4f4f !important;
+}
+
+.product-details-module__title {
+padding: 10px 0 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+html#ecwid_html body#dmRoot .ecwid .details-product-purchase__checkout span {
+  color: black !important;
+  font-size: 14px !important;
+  text-transform: initial;
+}
+.ec-cart__sidebar {
+  padding: 25px !important;
+  background-color: white !important;
+  border: 1px solid #dfdfdf !important;
+  border-radius: 6px;
+}
+
+
+html#ecwid_html body#dmRoot .ec-size.ec-size--l .ec-store .ec-cart-item__title {
+  font-size: 12px;
+}
+html#ecwid_html body#dmRoot .details-product-purchase__place > span > span {
+  padding: 4px 12px !important;
+  background-color: #f4f4f4 !important;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  color: #4f4f4f !important;
+
+}
+
+
+html#ecwid_html body#dmRoot .details-product-purchase__place span {
+  background-color: #transparent !important;
+}
+//------FOOTER----------
+.ec-footer {
+display: none;
+}
+
+//----------FILTER-------------
+.ec-filters {
+  padding: 25px !important;
+background-color: #f9f9f9 !important;
+  border-radius: 5px;
+  margin: 10px !important;
+  padding-top: 0px !important;
+  border: 1px solid #e1e1e1 !important;
+}
+
+.ec-pill.ec-pill--small {
+background-color: white !important;
+  border: none !important;
+  box-shadow: rgba(50, 50, 93, 0.17) 0px 10px 27px -5px, rgba(0, 0, 0, 0.13) 0px 8px 8px -8px;
+}
+.ec-pill__text-inner{
+color: white !important;
+}
