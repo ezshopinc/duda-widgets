@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            <span onclick="slideLeft_657cb9()" class="btn btn-657cb9"></span>
+            <span onclick="slideLeft_657cb9()" class="btn btn-8cb959"></span>
         </div>
     </div>
 
@@ -213,14 +213,13 @@
     
     var container = document.getElementById('slider-frame-container-657cb9')
     var slider = document.getElementById('slider-657cb9');
-    // var slides = document.getElementById('slide-657cb9').length;
-    var slides = 8;
+    var slides = document.getElementById('slide-657cb9').length;
     var buttons = document.getElementsByClassName('btn-657cb9');
     
     
     var currentPosition = 0;
     var currentMargin = 0;
-    var slidesPerPage = 4;
+    var slidesPerPage = 5;
     var slidesCount = slides - slidesPerPage;
     var containerWidth = container.offsetWidth;
     var prevKeyActive = false;
@@ -245,7 +244,11 @@
                 if (w < 1000) {
                     slidesPerPage = 3;
                 } else {
+                    if (w < 1500) {
                     slidesPerPage = 4;
+                    } else {
+                    slidesPerPage = 5;
+                    }
                 }
             }
         }
@@ -274,7 +277,6 @@
             console.log("slider",slider)
             console.log("currentMargin",currentMargin)
             console.log("currentPosition", currentPosition)
-            console.log("SLIDES", slides)
         try{
             if (currentPosition != 0) {
             slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
@@ -306,7 +308,6 @@
             currentPosition++;
         };
         if (currentPosition == slidesCount) {
-            console.log("INNACTIVEEEEEE")
             buttons[1].classList.add('inactive');
         }
         if (currentPosition > 0) {

@@ -157,7 +157,7 @@
 
     async function myFunction{ { CATEGORY_ID } } () {
         let totalProducts = 0;
-        let nbToDisplay = 8;
+        let nbToDisplay = 10;
         let htmlOutput = "";
 
         const currentDiv = document.getElementById("slider-{{CATEGORY_ID}}");
@@ -223,7 +223,8 @@
 
     var container{{ CATEGORY_ID }} = document.getElementById('slider-frame-container-{{CATEGORY_ID}}')
     var slider{{ CATEGORY_ID }} = document.getElementById('slider-{{CATEGORY_ID}}');
-    var slides{{ CATEGORY_ID }} = document.getElementById('slide-{{CATEGORY_ID}}').length;
+    // var slides{{CATEGORY_ID}} = document.getElementById('slide-{{CATEGORY_ID}}').length;
+    var slides{{ CATEGORY_ID }} = 8;
     var buttons{{ CATEGORY_ID }} = document.getElementsByClassName('btn-{{CATEGORY_ID}}');
 
 
