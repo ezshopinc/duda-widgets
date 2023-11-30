@@ -1,40 +1,9 @@
 <h2>Categories</h2>
-
 <div id="collapsible-menu" class="collapsible-menu">
-    <!--<div class="menu-item">-->
-    <!--  <button class="collapsible">Femmes</button>-->
-    <!--  <div class="content">-->
-    <!--    <div class="menu-item">-->
-    <!--      <button class="collapsible"><a href="">Haut</a></button>-->
-    <!--      <div class="content">-->
-    <!--        <ul>-->
-    <!--          <li><a href="">First</a></li>-->
-    <!--          <li><a href="">Second</a></li>-->
-    <!--        </ul>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--    <div class="menu-item">-->
-    <!--      <button class="collapsible">Bas</button>-->
-    <!--      <div class="content">-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
-    <!--<div class="menu-item">-->
-    <!--  <button class="collapsible">Hommes</button>-->
-    <!--  <div class="content">-->
-    <!--    <p>Details for Hommes...</p>-->
-    <!--  </div>-->
-    <!--</div>-->
-    <!-- Repeat for other categories -->
+    <!-- Categories are generated here-->
 </div>
 
-
-
-
 <script>
-
-
     function findParents_34f754(categories) {
         let parents = [];
         for (let i = 0; i < categories.length; i++) {
@@ -82,9 +51,6 @@
 
                 nbAPIcalls = Math.ceil(json.total / 100);
 
-                //Add First 100 categories
-                //categories = categories.concat(json.items);
-                console.log(nbAPIcalls)
                 return nbAPIcalls;
 
             })
@@ -110,8 +76,6 @@
                         .then(res => res.json())
                         .then(json => {
                             categories = categories.concat(json.items);
-                            console.log(json.count)
-                            //console.log(categories.length)
                         })
                         .catch(err => console.error('error:' + err));
                 }
@@ -120,10 +84,7 @@
 
         return categories;
     }
-    //      window.onload = function(){
-    //         // All code comes here
-    //         myFunctionX();
-    //  }
+
     $(document).ready(function () {
         (async function () {
             let categories = await fetchAllCategories_34f754()
@@ -162,7 +123,7 @@
                 for (let j = 0; j < parents[i].childs.length; j++) {
                     let productNameForUrl = parents[i].childs[j].name.replace(/ /g, "-");
                     htmlOutput += `<div class="menu-item">`
-                    htmlOutput += `<button class="collapsible"><a href="/store#!/${productNameForUrl}/c/${parents[i].childs[j].id}">${parents[i].childs[j].name}<span style="color: grey; font-style: italic; font-size:12px !important; font-weight: 300">  (${parents[i].childs[j].productCount}) </span> </a>`
+                    htmlOutput += `<button class="collapsible collapsible-child"><a href="/store#!/${productNameForUrl}/c/${parents[i].childs[j].id}">${parents[i].childs[j].name}<span style="color: grey; font-style: italic; font-size:12px !important; font-weight: 300">  (${parents[i].childs[j].productCount}) </span> </a>`
 
                     if (parents[i].childs[j].childs.length > 0) {
                         htmlOutput += `<span class="dropdownIcon" style=" vertical-align: middle; display: inline-block;">
@@ -197,7 +158,6 @@
                 htmlOutput += `</div>`
                 htmlOutput += `</div>`
             }
-            console.log(htmlOutput)
             const currentDiv = document.getElementById("collapsible-menu");
             currentDiv.innerHTML = htmlOutput;
             var coll = document.getElementsByClassName("collapsible");
@@ -230,3 +190,72 @@
     });
 
 </script>
+
+<style>
+    .collapsible {
+        background-color: #ffffff;
+        color: black;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        padding: 20px;
+        border-top: 1px solid #ccc;
+
+    }
+
+    .collapsible-child {
+        background-color: #ffffff;
+        color: black;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        padding: 20px;
+        font-weight: 600px;
+    }
+
+    .collapsible-child a {
+        text-decoration: none !important;
+
+    }
+
+    .c2-parent {
+        font-weight: bold;
+    }
+
+    .collapsible a {
+        text-decoration: none;
+    }
+
+    .active,
+    .collapsible:hover {
+        color: #555;
+    }
+
+    .content {
+        padding-left: 10px;
+        padding-right: 10px;
+        display: none;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+
+    .content li {
+        list-style: none;
+        padding: 25px;
+    }
+
+    .content li a {
+        text-decoration: none;
+    }
+
+    .content ul {
+        margin-left: 0px !important;
+        padding-inline-start: 0px;
+    }
+</style>
