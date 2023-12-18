@@ -1,39 +1,60 @@
 <div id="my-store-{{STORE_ID}}">
 </div>
 <div>
- <script data-cfasync="false" type="text/javascript" src="https://app.shopsettings.com/script.js?{{STORE_ID}}&amp;data_platform=code&amp;data_date=2023-11-07">
- </script>
- <script type="text/javascript">
-  xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-{{STORE_ID}}");
- </script>
- <script>
-   window.ec = window.ec || Object();
-   window.ec.config = window.ec.config || Object();
-   window.ec.config.store_main_page_url = "{{STORE_URL}}";
-   window.ec.storefront = window.ec.storefront || Object();
-   window.ec.storefront.show_breadcrumbs = false;
-   window.ec.storefront.show_footer_menu = false;
-   window.ec.storefront.product_filters_position_search_page = "RIGHT";
-   window.ec.storefront.show_root_categories = false;
-   window.ec.storefront.enable_page_transitions = true;
-   window.ec.storefront.shopping_cart_products_collapsed_on_desktop = false;
-   window.ec.storefront.shopping_cart_products_collapsed_on_mobile = false;
- </script>
- <script type="text/javascript">
- //Change a Label: Easily edit text labels in your store to reflect your unique style and brand
- ecwidMessages = {
-   "ProductSearch.Page.title" : "Products",
-   "ProductBrowser.ModernButton.add_to_bag" : "Add to Cart",
-   "TableProductsContainer.add_to_bag" : "Add to Cart",
- };
-</script>
+  <script data-cfasync="false" type="text/javascript"
+    src="https://app.shopsettings.com/script.js?{{STORE_ID}}&amp;data_platform=code&amp;data_date=2023-11-07">
+    </script>
+  <script type="text/javascript">
+    xProductBrowser("categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=my-store-{{STORE_ID}}");
+  </script>
+  <script>
+    window.ec = window.ec || Object();
+    window.ec.config = window.ec.config || Object();
+    window.ec.config.store_main_page_url = "{{STORE_URL}}";
+    window.ec.storefront = window.ec.storefront || Object();
+    window.ec.storefront.show_breadcrumbs = false;
+    window.ec.storefront.show_footer_menu = false;
+    window.ec.storefront.product_filters_position_search_page = "LEFT";
+    window.ec.storefront.product_filters_position_category_page = "LEFT";
+    window.ec.storefront.show_root_categories = false;
+    window.ec.storefront.enable_page_transitions = true;
+    window.ec.storefront.shopping_cart_products_collapsed_on_desktop = false;
+    window.ec.storefront.shopping_cart_products_collapsed_on_mobile = false;
+
+    window.ec.config.chameleon = window.ec.config.chameleon || Object();
+    window.ec.config.chameleon = {
+      colors: {
+        'color-link': '#0077ED',
+      },
+      font: {
+        'font-family': 'arial,sans-serif'
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    //Change a Label: Easily edit text labels in your store to reflect your unique style and brand
+    ecwidMessages = {
+      "ProductSearch.Page.title": "Products",
+      "ProductBrowser.ModernButton.add_to_bag": "Add to Cart",
+      "TableProductsContainer.add_to_bag": "Add to Cart",
+      "Checkout.Payment.CreditCard.subtitle": "Data secured by TLS encryption.",
+      "CartPage.Checkout.secure_notice": "Data secured by TLS encryption.",
+      "CartPage.NextSteps.Delivery.title": "1. Delivery options",
+      "CartPage.NextSteps.Shipping.title": "1. Shipping options",
+      "CartPage.NextSteps.Payment.title": "2. Payment information",
+      "Checkout.NextSteps.DeliveryAndPickup.title": "2. Delivery and pickup options",
+      "Checkout.NextSteps.Payment.title": "3. Payment information",
+      "CartPage.NextSteps.Confirmation.title": "3. Order confirmation",
+      "ProductFilters.link": "Filter by"
+    };
+  </script>
 
   <script>
-//  How to enable clean URLs if you don't have access to .htaccess file : https://gist.github.com/makfruit/00e1c298f11bf12392f67c240e35e927#3--how-to-enable-clean-urls-if-you-dont-have-access-to-htaccess-file
-   window.ec = window.ec || {};
-   window.ec.config = window.ec.config || {};
-   window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
-   window.ec.config.storefrontUrls.cleanUrls = false;
-   //window.ec.config.storefrontUrls.queryBasedCleanUrls = true;
-   </script>
+    //  How to enable clean URLs if you don't have access to .htaccess file : https://gist.github.com/makfruit/00e1c298f11bf12392f67c240e35e927#3--how-to-enable-clean-urls-if-you-dont-have-access-to-htaccess-file
+    window.ec = window.ec || {};
+    window.ec.config = window.ec.config || {};
+    window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
+    window.ec.config.storefrontUrls.cleanUrls = false;
+    //window.ec.config.storefrontUrls.queryBasedCleanUrls = true;
+  </script>
 </div>
